@@ -15,3 +15,8 @@ primary_region = "lax"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
+
+[tool.uv]
+override-dependencies = [
+  "banned-package-name; sys_platform == 'never'",
+]
