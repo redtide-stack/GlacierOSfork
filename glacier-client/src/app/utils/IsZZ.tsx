@@ -3,37 +3,37 @@ import { createContext, useContext, ReactNode, useEffect, useState } from 'react
 'use client';
 
 
-interface UVContextType {
-    isUV: boolean | null;
+interface ZZContextType {
+    isZZ: boolean | null;
 }
 
-const UVContext = createContext<UVContextType | undefined>(undefined);
+const ZZContext = createContext<ZZContextType | undefined>(undefined);
 
-export function UVProvider({ children }: { children: ReactNode }) {
-    const [isUV, setIsUV] = useState<boolean | null>(null);
+export function ZZProvider({ children }: { children: ReactNode }) {
+    const [isZZ, setIsZZ] = useState<boolean | null>(null);
 
     useEffect(() => {
-        if (isUV === null) {
-            initializeIsUV();
+        if (isZZ === null) {
+            initializeIsZZ();
         }
-    }, [isUV]);
+    }, [isZZ]);
 
-    const initializeIsUV = async () => {
+    const initializeIsZZ = async () => {
         useEffect(() => {
-            if (window.location.pathname.includes('uv/')) {
+            if (window.location.pathname.includes('ZZ/')) {
                 const controller = new AbortController();
                 const timeout = setTimeout(() => controller.abort(), 400);
 
-                fetch('/isUV', { signal: controller.signal })
+                fetch('/isZZ', { signal: controller.signal })
                     .then(response => {
                         clearTimeout(timeout);
                         if (!response.ok) throw new Error('Network response was not ok');
-                        setIsUV(true);
+                        setIsZZ(true);
                     })
                     .catch(error => {
-                        setIsUV(false);
+                        setIsZZ(false);
                         if (error.name === 'AbortError') {
-                            console.error('Request timed out, no UV detected');
+                            console.error('Request timed out, no ZZ detected');
                         } else {
                             console.error('Fetch error:', error);
                         }
@@ -43,16 +43,16 @@ export function UVProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        <UVContext.Provider value={{ isUV }}>
+        <ZZContext.Provider value={{ isZZ }}>
             {children}
-        </UVContext.Provider>
+        </ZZContext.Provider>
     );
 }
 
-export function useUV(): boolean | null {
-    const context = useContext(UVContext);
+export function useZZ(): boolean | null {
+    const context = useContext(ZZContext);
     if (context === undefined) {
-        throw new Error('useUV must be used within UVProvider');
+        throw new Error('useZZ must be used within ZZProvider');
     }
-    return context.isUV;
+    return context.isZZ;
 }
