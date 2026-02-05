@@ -63,7 +63,7 @@ import "./live.css";
 import { HydraProvider } from "./windows/HydraContext";
 import { HydraCreator } from "./windows/HydraCreator";
 import { StoreAppsProvider } from "./windows/store/StoreAppsContext";
-import { UVProvider } from "./utils/IsUV";
+import { UVProvider } from "./utils/IsZZ";
 
 declare const self: any;
 declare const Ultraviolet: any;

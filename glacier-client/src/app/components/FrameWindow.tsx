@@ -6,7 +6,7 @@ import useWindowDimensions from "../utils/WindowSizes";
 import { useEffect } from "react";
 import { useStoreApps } from "../windows/store/StoreAppsContext";
 import { nameToID } from "../windows/store/StoreApps";
-import { useUV } from "../utils/IsUV";
+import { useUV } from "../utils/IsZZ";
 
 export default function FrameWindow({
   title,
