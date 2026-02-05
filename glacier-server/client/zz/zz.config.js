@@ -16,15 +16,15 @@ html, body {
     z-index: 999;
 }`;
 
-self.__uv$config = {
-  prefix: "/uv/service/",
-  encodeUrl: Ultraviolet.codec.xor.encode,
-  decodeUrl: Ultraviolet.codec.xor.decode,
-  handler: "/uv/uv.handler.js",
-  client: "/uv/uv.client.js",
-  bundle: "/uv/uv.bundle.js",
-  config: "/uv/uv.config.js",
-  sw: "/uv/uv.sw.js",
+self.__zz$config = {
+  prefix: "/zz/service/",
+  encodeUrl: zz.codec.xor.encode,
+  decodeUrl: zz.codec.xor.decode,
+  handler: "/zz/zz.handler.js",
+  client: "/zz/zz.client.js",
+  bundle: "/zz/zz.bundle.js",
+  config: "/zz/zz.config.js",
+  sw: "/zz/zz.sw.js",
   inject: [
     { 
       "host": "/^https:\/\/copy\.sh\/v86\/\?/",

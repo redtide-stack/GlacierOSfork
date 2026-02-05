@@ -1,13 +1,13 @@
-// This file overwrites the stock UV config.js
+// This file overwrites the stock zz config.js
 
-self.__uv$config = {
-    prefix: "/uv2/service/",
+self.__zz$config = {
+    prefix: "/zz2/service/",
     bare: "/bare2/",
-    encodeUrl: Ultraviolet.codec.xor.encode,
-    decodeUrl: Ultraviolet.codec.xor.decode,
-    handler: "/uv2/uv.handler.js",
-    client: "/uv2/uv.client.js",
-    bundle: "/uv2/uv.bundle.js",
-    config: "/uv2/uv.config.js",
-    sw: "/uv2/uv.sw.js",
+    encodeUrl: zz.codec.xor.encode,
+    decodeUrl: zz.codec.xor.decode,
+    handler: "/zz2/zz.handler.js",
+    client: "/zz2/zz.client.js",
+    bundle: "/zz2/zz.bundle.js",
+    config: "/zz2/zz.config.js",
+    sw: "/zz2/zz.sw.js",
 };

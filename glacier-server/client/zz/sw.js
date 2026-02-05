@@ -1,15 +1,15 @@
 importScripts('../epoxy/index.js');
-importScripts('uv.bundle.js');
-importScripts('uv.config.js');
-importScripts(__uv$config.sw || 'uv.sw.js');
+importScripts('zz.bundle.js');
+importScripts('zz.config.js');
+importScripts(__zz$config.sw || 'zz.sw.js');
 
-const uv = new UVServiceWorker();
+const zz = new zzServiceWorker();
 
 self.addEventListener('fetch', event => {
     event.respondWith(
         (async ()=>{
-            if(uv.route(event)) {
-                return await uv.fetch(event);
+            if(zz.route(event)) {
+                return await zz.fetch(event);
             }
             return await fetch(event.request);
         })()
